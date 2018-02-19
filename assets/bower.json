@@ -1,0 +1,24 @@
+{
+  "name": "expensemanagement",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.0.0",
+    "jquery-ui": "^1.12.1",
+    "bootstrap-datepicker": "^1.7.1",
+    "components-font-awesome": "^5.0.6",
+    "bootstrap-sweetalert": "^1.0.1"
+  }
+}

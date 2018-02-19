@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header ch-alt m-b-20">
+        <h2>EXPENSE MANAGEMENT</h2>
+
+        <button class="btn bgm-cyan btn-float waves-effect waves-circle waves-float" ng-click="openNewExpenseForm()">&#x2b;</button>
+    </div>
+
+    <div class="card-body">
+        <div class="list-group">
+            <a class="list-group-item media" ng-repeat="expenseTask in expenseTasks">
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="media-body">
+                            <div class="lgi-heading" ng-click="showExpenseDetails(expenseTask.id)">{{ expenseTask.title }}</div>
+                            <div>
+                                <small class="lgi-text">{{ expenseTask.description }}</small>
+                            </div>
+                            <small class="lgi-text">{{ expenseTask.createdDate }}</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="amount-container">
+                            <span class="lgi-heading">Rs.</span>
+                            <small class="lgi-text">{{ expenseTask.amount }}</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <span class="btn-task-action-container">
+                            <button class="btn btn-task-action waves-effect waves-circle waves-float edit-task" ng-click="editExpenseTask(expenseTask.id)">
+                                <i class="far fa-edit"></i>
+                            </button>
+                            <button class="btn btn-task-action waves-effect waves-circle waves-float delete-task" ng-click="deleteExpenseTask(expenseTask.id)">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-default expense-header">
+    <div class="navbar-header">
+        <a class="navbar-brand">Create Expense</a>
+    </div>
+</nav>
+<form class="new-expense-form" name="expenseTaskForm" novalidate>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group" ng-class="{ 'has-error' : expenseTaskForm.taskTitle.$invalid && !expenseTaskForm.taskTitle.$pristine }">
+                <label>Title</label>
+                <input type="text" class="form-control" id="title" name="taskTitle" ng-model="expenseTask.title" required>
+                <p ng-show="expenseTaskForm.taskTitle.$invalid && !expenseTaskForm.taskTitle.$pristine" class="help-block">Task title is required.</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group" ng-class="{ 'has-error' : expenseTaskForm.taskAmount.$invalid && !expenseTaskForm.taskAmount.$pristine }">
+                <label>Amount</label>
+                <input type="number" class="form-control" id="amount" name="taskAmount" ng-model="expenseTask.amount" required />
+                <p ng-show="expenseTaskForm.taskAmount.$invalid && !expenseTaskForm.taskAmount.$pristine" class="help-block">Task amount is required.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group" ng-class="{ 'has-error' : expenseTaskForm.taskDescription.$invalid && !expenseTaskForm.taskDescription.$pristine }">
+                <label>Description</label>
+                <input type="text" class="form-control" id="description" name="taskDescription" ng-model="expenseTask.description" required />
+                <p ng-show="expenseTaskForm.taskDescription.$invalid && !expenseTaskForm.taskDescription.$pristine" class="help-block">Task description is required.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group" ng-class="{ 'has-error' : expenseTaskForm.taskCreatedDate.$invalid && !expenseTaskForm.taskCreatedDate.$pristine }">
+                <label>Created Date</label>
+                <div class='input-group date' id='createDateTimePicker'>
+                    <input type='text' class="form-control" name="taskCreatedDate" ng-model="expenseTask.createdDate" ng-disabled="!newExpenseTaskState" required />
+                    <span class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                    </span>
+                    <p ng-show="expenseTaskForm.taskCreatedDate.$invalid && !expenseTaskForm.taskCreatedDate.$pristine" class="help-block">Task created date is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <label>Updated Date</label>
+                <div class='input-group date' id='updateDateTimePicker'>
+                    <input type='text' class="form-control" name="taskUpdatedDate" ng-model="expenseTask.updatedDate" ng-disabled="newExpenseTaskState" />
+                    <span class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <button type="button" class="btn btn-default" ng-click="backToListExpenseTask()">Back</button>
+    <button type="submit" class="btn btn-success" ng-click="saveExpenseTask()" ng-if="newExpenseTaskState" ng-disabled="expenseTaskForm.$invalid">Submit</button>
+    <button type="submit" class="btn btn-success" ng-click="updateExpenseTask()" ng-if="!newExpenseTaskState" ng-disabled="expenseTaskForm.$invalid">Update</button>
+</form>

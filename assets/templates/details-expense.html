@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default expense-header">
+    <div class="navbar-header">
+        <a class="navbar-brand">Expense Details</a>
+    </div>
+</nav>
+<div class="expense-task-details">
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <label>
+                    <b>Title :</b>
+                </label>
+                <span>{{ expenseTask.title }}</span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <label>
+                    <b>Amount :</b>
+                </label>
+                <span>{{ expenseTask.amount }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <label>
+                    <b>Description :</b>
+                </label>
+                <span>{{ expenseTask.description }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='col-sm-6'>
+            <div>
+                <label>
+                    <b>Created Date :</b>
+                </label>
+                <span>{{ expenseTask.createdDate }}</span>
+            </div>
+        </div>
+
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <label>
+                    <b>Updated Date :</b>
+                </label>
+                <span>{{ expenseTask.updatedDate }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="#!newExpense/{{expenseTask.id}}">
+            <button type="button" class="btn btn-warning">
+                <i class="far fa-edit"></i> Edit
+            </button>
+        </a>
+    </div>
+</div>
